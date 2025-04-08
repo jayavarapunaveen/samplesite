@@ -26,6 +26,25 @@
                 alert('Storage values set! Cookie, session, and local storage have been updated.');
             }
         }
+
+        
+        function getStorageValues() {
+            
+            // Get the key and value from the input fields
+            var storageKey = document.getElementById('storageKey').value;
+            var storageValue = document.getElementById('storageValue').value;
+
+            if (storageKey && storageValue) {
+               // Set Session Storage
+                sessionStorage.getItem(storageKey);
+                
+                // Set Local Storage
+                localStorage.setItem(storageKey);
+                console.log(document.cookie,sessionStorage.getItem(storageKey),localStorage.getItem(storageKey));
+                // Notify user
+                alert('values are in console');
+            }
+        }
     </script>
 </head>
 <body>
@@ -42,6 +61,7 @@
         <input type="text" id="storageValue" placeholder="Enter value"><br><br>
 
         <button onclick="setStorageValues()">Set Storage</button>
+         <button onclick="getStorageValues()">Set Storage</button>
     </div>
 
 </body>
