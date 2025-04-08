@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Setter</title>
+    <script>
+        function setStorageValues() {
+            // Get the key and value from the input fields
+            var storageKey = document.getElementById('storageKey').value;
+            var storageValue = document.getElementById('storageValue').value;
+
+            if (storageKey && storageValue) {
+                // Set Cookie (expires in 1 day)
+                document.cookie = storageKey + "=" + storageValue + "; expires=" + new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
+                
+                // Set Session Storage
+                sessionStorage.setItem(storageKey, storageValue);
+                
+                // Set Local Storage
+                localStorage.setItem(storageKey, storageValue);
+                
+                // Notify user
+                alert('Storage values set! Cookie, session, and local storage have been updated.');
+            } else {
+                alert('Please enter both a key and a value.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Set Cookie, Session, and Local Storage</h2>
+
+    <div>
+        <label for="storageKey">Key:</label>
+        <input type="text" id="storageKey" placeholder="Enter key"><br><br>
+
+        <label for="storageValue">Value:</label>
+        <input type="text" id="storageValue" placeholder="Enter value"><br><br>
+
+        <button onclick="setStorageValues()">Set Storage</button>
+    </div>
+
+</body>
+</html>
