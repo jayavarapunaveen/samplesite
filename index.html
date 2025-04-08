@@ -5,28 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storage Setter</title>
     <script>
-         function createIframe() {
-      const iframe = document.createElement('iframe');
-      // iframe.src = `http://localhost:8000/lollipoptest?clientId=${clientId}&token=${token}`;
-      // iframe.src='https://www.msmaster.qa.paypal.com/'
-      // iframe.src='https://www.dmart.in/'
-      // iframe.src='https://tools.pingdom.com/';
-      // iframe.src = 'https://www.redhotpawn.com/';
-      // iframe.src= 'https://jayavarapunaveen.github.io/samplesite/'
-      iframe.src= 'https://localhost:4000/set-cookie-secure';
-      iframe.style.position = 'fixed';
-      iframe.style.bottom = '20px';
-      iframe.style.right = '20px';
-      iframe.style.width = '600px';
-      iframe.style.height = '600px';
-      iframe.style.border = 'none';
-      iframe.style.zIndex = '1000';
-      // Insert the iframe into the page
-      document.body.appendChild(iframe);
-    }
       
         function setStorageValues() {
-              createIfremae();
+            
             // Get the key and value from the input fields
             var storageKey = document.getElementById('storageKey').value;
             var storageValue = document.getElementById('storageValue').value;
@@ -51,7 +32,9 @@
     <h2>Set Cookie, Session, and Local Storage1</h2>
 
     <div>
-        
+        <iframe src="https://localhost:4000/set-cookie-secure" width="800" height="600" title="server side secure"></iframe>
+<iframe src="https://localhost:4000/set-cookie" width="800" height="600" title="server side"></iframe>
+
         <label for="storageKey">Key:</label>
         <input type="text" id="storageKey" placeholder="Enter key"><br><br>
 
