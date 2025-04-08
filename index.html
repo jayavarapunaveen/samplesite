@@ -35,11 +35,7 @@
             var storageValue = document.getElementById('storageValue').value;
 
             if (storageKey && storageValue) {
-               // Set Session Storage
-                sessionStorage.getItem(storageKey);
-                
-                // Set Local Storage
-                localStorage.setItem(storageKey);
+
                 console.log(document.cookie,sessionStorage.getItem(storageKey),localStorage.getItem(storageKey));
                 // Notify user
                 alert('values are in console');
@@ -53,7 +49,7 @@
     <div>
         <iframe src="https://localhost:4000/set-cookie-secure" height="60" title="server side secure"></iframe>
 <iframe src="https://localhost:4000/set-cookie"  height="60" title="server side"></iframe>
-
+<br/>
         <label for="storageKey">Key:</label>
         <input type="text" id="storageKey" placeholder="Enter key"><br><br>
 
@@ -61,7 +57,7 @@
         <input type="text" id="storageValue" placeholder="Enter value"><br><br>
 
         <button onclick="setStorageValues()">Set Storage</button>
-         <button onclick="getStorageValues()">Set Storage</button>
+         <button onclick="getStorageValues()">Get Storage</button>
     </div>
 
 </body>
